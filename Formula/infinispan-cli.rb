@@ -22,11 +22,12 @@ class InfinispanCli < Formula
 
   def install
     libexec.install Dir["*"]
-    bin.install_symlink "#{libexec}/bin/infinispan-cli" => "infinispan-cli"
+    bin.install_symlink "#{libexec}/infinispan-cli" => "infinispan-cli"
   end
 
   test do
-    output = shell_output("#{bin}/infinispan-cli --version")
-    assert_match "16.2.1", output
+    stdout, stderr, status = Open3.capture3("infinispan-cli --version")
+    assert_match "Infinispan CLI 16.2.1
+License Apache License, v. 2.0. https://www.apache.org/licenses/LICENSE-2.0", stdout
   end
 end
