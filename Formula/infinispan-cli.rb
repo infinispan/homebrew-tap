@@ -1,32 +1,39 @@
-# Generated with JReleaser 1.24.0 at 2026-06-08T12:26:05.787051208Z
+# Generated with JReleaser 1.25.0 at 2026-07-31T17:34:32.917457765Z
 
 class InfinispanCli < Formula
   desc "Command-line interface for Infinispan data grid"
   homepage "https://infinispan.org"
-  version "16.2.1"
+  version "16.2.2"
   license "Apache-2.0"
 
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/infinispan/infinispan/releases/download/16.2.1/infinispan-cli-16.2.1-linux-aarch_64.zip"
-    sha256 "08496d1990191d82b37df01e0ddf5b4057d16a07e8d8cca73bce5ed89885f2d6"
+    url "https://github.com/infinispan/infinispan/releases/download/16.2.2/infinispan-cli-16.2.2-linux-aarch_64.zip", :using => :nounzip
+    sha256 "39afb1ceaa23cc678314afbb6b26b20941561c47cf60d9d0c8ed86410a99c981"
+
+    def install
+      bin.install "infinispan-cli-16.2.2-linux-aarch_64" => "infinispan-cli"
+    end
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/infinispan/infinispan/releases/download/16.2.1/infinispan-cli-16.2.1-linux-x86_64.zip"
-    sha256 "1afe341e7fd0eaa2b84542ed4127d28c5f59542c5e5dba80393c53260a3cf090"
+    url "https://github.com/infinispan/infinispan/releases/download/16.2.2/infinispan-cli-16.2.2-linux-x86_64.zip", :using => :nounzip
+    sha256 "099ea88ee760009c000211978e159ec326d64f58bc422ee44d66185257a2807c"
+
+    def install
+      bin.install "infinispan-cli-16.2.2-linux-x86_64" => "infinispan-cli"
+    end
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/infinispan/infinispan/releases/download/16.2.1/infinispan-cli-16.2.1-osx-aarch_64.zip"
-    sha256 "768a335cc5a71f4bf30ae125330bf8e2feb1d8570afcc4bbb5dd2e7d416951c3"
+    url "https://github.com/infinispan/infinispan/releases/download/16.2.2/infinispan-cli-16.2.2-osx-aarch_64.zip", :using => :nounzip
+    sha256 "1b2725f0c906c26b1d61b1a0a1d3c08bbbb35da1551627b82467b52d61a6715f"
+
+    def install
+      bin.install "infinispan-cli-16.2.2-osx-aarch_64" => "infinispan-cli"
+    end
   end
 
-
-  def install
-    libexec.install Dir["*"]
-    bin.install_symlink "#{libexec}/bin/infinispan-cli" => "infinispan-cli"
-  end
 
   test do
     output = shell_output("#{bin}/infinispan-cli --version")
-    assert_match "16.2.1", output
+    assert_match "16.2.2", output
   end
 end

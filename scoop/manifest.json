@@ -1,0 +1,21 @@
+{
+    "version": "16.2.2",
+    "description": "Command-line interface for Infinispan data grid",
+    "homepage": "https://infinispan.org",
+    "license": "Apache-2.0",
+    "url": "https://github.com/infinispan/infinispan/releases/download/16.2.2/infinispan-cli-16.2.2-linux-aarch_64.zip",
+    "hash": "sha256:39afb1ceaa23cc678314afbb6b26b20941561c47cf60d9d0c8ed86410a99c981",
+    "extract_dir": "infinispan-cli-16.2.2-linux-aarch_64",
+    "bin": "infinispan-cli.exe",
+    "checkver": {
+        "url": "",
+        "re": "v([\\d.]+).zip"
+    },
+    "autoupdate": {
+        "url": "",
+        "extract_dir": "",
+        "hash": {
+            "url": "$url.sha256"
+        }
+    }
+}
