@@ -1,11 +1,11 @@
-# Generated with JReleaser 1.26.0 at 2026-09-03T21:44:29.150084733Z
+# Generated with JReleaser 1.26.0 at 2026-09-11T14:05:56.377642277Z
 
 class InfinispanCli < Formula
   desc "Command-line interface for Infinispan data grid"
   homepage "https://infinispan.org"
-  url "https://github.com/infinispan/infinispan/releases/download/16.2.3/infinispan-cli-16.2.3-linux-aarch_64.zip", :using => :nounzip
-  version "16.2.3"
-  sha256 "67a7fdbf4c1f840e0b32cdca61a4c62624564107b4e678f44a0e3cc090c16caa"
+  url "https://github.com/infinispan/infinispan/releases/download/16.0.15/infinispan-cli-16.0.15-linux-aarch_64.zip", :using => :nounzip
+  version "16.0.15"
+  sha256 "1e55399ff6f8e34b9ee0e0f66b060d09484a8445fd8c78ea0df25aacc007cce4"
   license "Apache-2.0"
 
 
@@ -21,6 +21,6 @@ class InfinispanCli < Formula
 
   test do
     output = shell_output("#{bin}/infinispan-cli --version")
-    assert_match "16.2.3", output
+    assert_match "16.0.15", output
   end
 end
