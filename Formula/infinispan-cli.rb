@@ -1,39 +1,39 @@
-# Generated with JReleaser 1.26.0 at 2026-09-11T14:05:56.377642277Z
+# Generated with JReleaser 1.26.0 at 2026-10-06T16:16:24.930410489Z
 
 class InfinispanCli < Formula
   desc "Command-line interface for Infinispan data grid"
   homepage "https://infinispan.org"
-  version "16.0.15"
+  version "16.3.0"
   license "Apache-2.0"
 
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/infinispan/infinispan/releases/download/16.0.15/infinispan-cli-16.0.15-linux-aarch_64.zip", :using => :nounzip
-    sha256 "1e55399ff6f8e34b9ee0e0f66b060d09484a8445fd8c78ea0df25aacc007cce4"
+    url "https://github.com/infinispan/infinispan/releases/download/16.3.0/infinispan-cli-16.3.0-linux-aarch_64.zip", :using => :nounzip
+    sha256 "962f8a20e7c1845787a2f389c102e525b26e728f55e7199527837d2278671755"
 
     def install
-      bin.install "infinispan-cli-16.0.15-linux-aarch_64" => "infinispan-cli"
+      bin.install "infinispan-cli-16.3.0-linux-aarch_64" => "infinispan-cli"
     end
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/infinispan/infinispan/releases/download/16.0.15/infinispan-cli-16.0.15-linux-x86_64.zip", :using => :nounzip
-    sha256 "07aa3c5c7ed32e84804adbf7d9229d80f5c5c77f7cccd6118d5155ad5118225c"
+    url "https://github.com/infinispan/infinispan/releases/download/16.3.0/infinispan-cli-16.3.0-linux-x86_64.zip", :using => :nounzip
+    sha256 "3467cdc7470447dfc1ebe11197665d519ee7df766e8e57c786d755c82a02eecf"
 
     def install
-      bin.install "infinispan-cli-16.0.15-linux-x86_64" => "infinispan-cli"
+      bin.install "infinispan-cli-16.3.0-linux-x86_64" => "infinispan-cli"
     end
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/infinispan/infinispan/releases/download/16.0.15/infinispan-cli-16.0.15-osx-aarch_64.zip", :using => :nounzip
-    sha256 "70299989704b5e1166c0c0f71d9d8b9a26d5e3bc85c7c570c78f6bda03601013"
+    url "https://github.com/infinispan/infinispan/releases/download/16.3.0/infinispan-cli-16.3.0-osx-aarch_64.zip", :using => :nounzip
+    sha256 "483467b2beedbb47a649001c833ef8c1d4141a05f8a8a1574745e0b645925621"
 
     def install
-      bin.install "infinispan-cli-16.0.15-osx-aarch_64" => "infinispan-cli"
+      bin.install "infinispan-cli-16.3.0-osx-aarch_64" => "infinispan-cli"
     end
   end
 
 
   test do
     output = shell_output("#{bin}/infinispan-cli --version")
-    assert_match "16.0.15", output
+    assert_match "16.3.0", output
   end
 end
