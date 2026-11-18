@@ -1,4 +1,4 @@
-# Generated with JReleaser 1.27.0 at 2026-11-17T16:24:51.739901992Z
+# Generated with JReleaser 1.27.0 at 2026-11-18T20:42:22.063614618Z
 
 class InfinispanCli < Formula
   desc "Command-line interface for Infinispan data grid"
@@ -6,16 +6,16 @@ class InfinispanCli < Formula
   license "Apache-2.0"
 
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/infinispan/infinispan/releases/download/16.0.16/infinispan-cli-16.0.16-linux-aarch_64.zip"
-    sha256 "2113df22a1b17a462f42875da350b88991db9728e9d5e28533c7f203018355b4"
+    url "https://github.com/infinispan/infinispan/releases/download/16.3.2/infinispan-cli-16.3.2-linux-aarch_64.zip"
+    sha256 "086500803b33e57e83fb98865a5b52c7d7d1aa1fb2bd088a435a7882afb5f5c1"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/infinispan/infinispan/releases/download/16.0.16/infinispan-cli-16.0.16-linux-x86_64.zip"
-    sha256 "c2df47f5c12aee7a1235f8095b7718f373f0a852211f3cbb3f24f84c190aaa14"
+    url "https://github.com/infinispan/infinispan/releases/download/16.3.2/infinispan-cli-16.3.2-linux-x86_64.zip"
+    sha256 "12f8be8d8ae9456a36586feb1d8ed397232ea0cda91addb2170113405c759aa3"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/infinispan/infinispan/releases/download/16.0.16/infinispan-cli-16.0.16-osx-aarch_64.zip"
-    sha256 "447bc1496c0293d3f32241eadc0925185fa5f6fdca20e8b8baaf8a01f7dc6061"
+    url "https://github.com/infinispan/infinispan/releases/download/16.3.2/infinispan-cli-16.3.2-osx-aarch_64.zip"
+    sha256 "4639569d41866089c1b7f8b508193c285051f295b09259618b128014377b7d8e"
   end
 
   def install
@@ -39,6 +39,6 @@ class InfinispanCli < Formula
 
   test do
     output = shell_output("#{bin}/infinispan-cli --version")
-    assert_match "16.0.16", output
+    assert_match "16.3.2", output
   end
 end
